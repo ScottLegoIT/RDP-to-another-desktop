@@ -1,11 +1,12 @@
 <p align="center">
+  
 ![image](https://github.com/user-attachments/assets/5ae4ae45-a988-4468-8cb1-9a4b61f82eca)
 
 </p>
 
-<h1>osTicket - Post Configuration Setup</h1>
+<h1>RDP To Another Desktop</h1>
 </p>
-This tutorial demonstrates the post configuration setup of the osTicket system .<br />
+This is a demonstration on how to RDP to another Desktop  .<br />
 
 <p>
 
