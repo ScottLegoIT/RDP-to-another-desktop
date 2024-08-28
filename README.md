@@ -10,63 +10,74 @@ This is a demonstration on how to RDP to another Desktop  .<br />
 
 <p>
 <h1>Technologies and Environments Include</h1>
-  -Microsoft Azure
+  -Microsoft Azure(Virtual Machines)
+  
   -RDP(Remote Desktop Protocol)
 </p>
+<h1>Operating Systems Used</h1>
+-Windows 11
+
+-Windows 10(For Virtual Machine)
+
+<h1>Prerequisites Include</h1>
+-Azure Subscription(Free Subscription)
+
+-RDP Software(Using Windows Version is this demonstration)
 </p>
 <p>
-Okay wonderful! We have successfully configured osTicket from scratch. Now we will do some system administration and work on some post installation setup.
-first we will configure new roles within the help desk. In order to do so go to Admin panel-> Agents-> Roles. We will create a Supreme Admin. 
-Click on "Add new role" then enter the name of the new role. You can also modify any specific roles permissions. In this case since we are creating a Supreme Admin they will be given all permissions. Keep in mind roles are used to determine an agents permissions so not all agents will have unlimited access. If you followed the steps correctly your screen should like something like this. As you can see we have successfully created the "Supreme Admin" role.
+Alrighty, To start things off your going to head to your desktops broswer and search "portal.azure.com" From here you are going to select "Resource Group" or type it into the provided search bar.Go ahead an select "Create" and give your group a name.(For this example im naming mine RG-01) select your region, and then select "review and create.Once Finished, it should look something close to this as shown below.
 </p>
-<img src="https://i.imgur.com/XHteqdt.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<br />
-<p>
-</p>
-<p>
-Select the "Departments" button in the agents tab. Here we will be able to create a new department. Each Agent is assigned to a specific department depending on their assigned role within the helpdesk. In this case we will be creating the "System Administrators" department, this is where the Supreme Admins will be designated. Other specific settings such as SLAs, managers and other email settings can be set up in the departments tab. 
-</p>
-<br />
-<p>
-<img src="https://i.imgur.com/dGK0RVM.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-After configuring a new department we will set up a new team. Teams allow you to pull agents from different departments you can have an A team that has top technicians from specific departments. For example you can create a help topic that correlates with a product you produce, and assign it to a team of agents that specialize in that particular product. To set up a team go to Agents->Teams. A Level I support team has been created by default, in this example we will create a Level II Support Team. 
-</p>
-<br />
-<p>
-<img src="https://i.imgur.com/cYzWBD2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Now that we have set up a new team we will create a new setting that will allow anyone to create tickets. Admin Panel->Settings->User Settings.
+
+![image](https://github.com/user-attachments/assets/88a24e9f-c54f-4fda-b243-13713b9bd46e)
+
 
 </p>
 <br />
-<img src="https://i.imgur.com/H1q2Fdh.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<p>
 </p>
 <p>
-It is now time to create Agents. Agents are the employees of the helpdesk that actually work on solving tickets. Agents are assigned primary departments and given a primary role for tickets sent to their department. Agents can be given access to other departments other than their own, they can also have different roles depending on which department they are in. Permissions, Access, & Teams are be assigned in the Agents tab. 
+From this page, Use the search bar and type "Virtual Machine", select create virtual machine. Select the Resource Group you have just created and give your new machine a new(im using the name VM-01), use a region that works with your system and a size that is avaliable for your subscription
+  
+![image](https://github.com/user-attachments/assets/544b8309-a289-4a6b-ac20-2dbeae12d88e)
+
+  Now your going to want to create a username and password(this is an important step in using RDP) checkmark the licensing box at the bottom and select "review and create" If done correctly, validation should pass and just click create.
+  
+  ![image](https://github.com/user-attachments/assets/b921494b-6f00-426a-94dd-84815638e7eb)
+
+  Watch the magic happen while your Virtual Machine is being created.
+  
+  ![image](https://github.com/user-attachments/assets/af111941-36ed-49f4-b53d-247d0b08e9b2)
+
 </p>
 <br />
-<img src="https://i.imgur.com/8WTOSre.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<p>
+
 </p>
 <p>
-After creating some agents we will create users. Users are customers that create tickets when they are having issues. A user is identified with their E-mail address. To create a user follow this path Agent Panel->Users->User Directory->Add new. 
+Once created, refresh the page and head over to your resource group you created earlier. Inside will be your new VM. Select your VM and copy the "Public IP Address"(we will be using this as our main way to remote into the newly created VM). 
+  
+  ![image](https://github.com/user-attachments/assets/fc1c7745-8319-4b8f-b6f1-ddea61924030)
+
 </p>
 <br />
-<img src="https://i.imgur.com/xOprA9f.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<p>
+Next, Head down to your Windows "start" button and type "Remote Desktop". Open the app and paste your created VM's Public IP Address in the search bar.
+  
+  ![image](https://github.com/user-attachments/assets/3a90dc2b-7f78-4a4d-a5a0-163eddd9a8c3)
+
 </p>
 <p>
-SLAs Plans provide a length of time in which the help desk is expected to take in order to solve a specific ticket. SLA Plans are created by going to Admin Panel->Manage->SLA Plans. Each SLA has a schedule and within that schedule there is a grace period. In this example SEV-A has a 24/7 and a one hour grace period. 
+Now, press connect and sign in using your created username and password from your VM,select okay to the popup box that appears and now you should be loading into your VM you have just created. Once evrything loads in, you should be on the start screen of your VM
+  
+![image](https://github.com/user-attachments/assets/0eb5228b-3bba-4f05-9ba9-83beb52f7dcb)
+
+
 </p>
 <br />
-<img src="https://i.imgur.com/LpjCaLd.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Help topics help users categorize their tickets. In the example below we have made a help topic for "Business Critical Outage" this can be if customers cannot access mobile banking. 
-</p>
-<br />
-<img src="https://i.imgur.com/kB7rts2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
+From here, the ball is in your court and you may do as you please. *IMPORTANT NOTE* once you have finished with your experimenting inside of your VM, Make sure to exit out of your Remote Desktop and head back to "portal.azure.com" and shutdown and remove your VM and your resource group. you dont want to leave these go on in the backround because Microsoft Azure is a "pay-as-you-go" and you dont want to use up all your free credits inc. Have fun and hope this helped you in understanding how to RDP into another Desktop!
+
+![image](https://github.com/user-attachments/assets/b317ea1a-b6ef-4be3-89f9-d190742df8f5)
+
+
+![image](https://github.com/user-attachments/assets/38a2b49a-282a-481f-adaf-de8c7b3907bd)
+
