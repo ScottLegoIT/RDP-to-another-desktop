@@ -1,5 +1,6 @@
 <p align="center">
-<img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
+![image](https://github.com/user-attachments/assets/5ae4ae45-a988-4468-8cb1-9a4b61f82eca)
+
 </p>
 
 <h1>osTicket - Post Configuration Setup</h1>
